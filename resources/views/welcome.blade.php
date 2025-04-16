@@ -29,6 +29,7 @@
     <div class="grid grid-cols-3 gap-10 mt-5">
       @foreach($packages as $package)
         <div class="bg-pink-600 text-white shadow-lg p-4 rounded-lg hover:-translate-y-1 duration-300 cursor-pointer">
+          
             <h1 class=" text-center mt-2 p-2 text-lg">{{$package->name}}</h1>
             <hr class="mx-4">
             <p class="text-2xl font-bold text-center mt-2">{{$package->price}}</p>

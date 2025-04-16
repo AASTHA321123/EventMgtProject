@@ -12,7 +12,7 @@ class DashboardController extends Controller
     {
         $totalcategories = Category::count();
         $totalnotices = Notice::count();
-        return view('dashboard', compact('totalcategories', 'totalnotices'));
+       return view('dashboard', compact('totalcategories', 'totalnotices',));
         
     }
 }

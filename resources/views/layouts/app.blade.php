@@ -23,27 +23,27 @@
                         <img src="{{asset('logo/images of logo.jpg')}}" alt="" class="h-16  mx-auto my-5">
                        
                           </div>
-                          <div class="mt-5">
-                            <a href="{{route('dashboard')}}" class="block px-2 py-3 hover:bg-blue-600 hover:text-white text-lg">Dashboard</a>
-                            <a href="{{route('notice.index')}}" class="block px-2 py-3 hover:bg-blue-600 hover:text-white text-lg">Notice</a>
-                            <a href="{{route('category.index')}}" class="block px-2 py-3 hover:bg-blue-600 hover:text-white text-lg">Category</a>
-                            <a href="{{route('items.index')}}" class="block px-2 py-3 hover:bg-blue-600 hover:text-white text-lg">Items</a>
-                            <a href="{{route('packages.index')}}" class="block px-2 py-3 hover:bg-blue-600 hover:text-white text-lg">Package</a>
-                            <a href="{{route('orders.index')}}" class="block px-2 py-3 hover:bg-blue-600 hover:text-white text-lg">Orders</a>
-                            <a href="{{route('banners.index')}}" class="block px-2 py-3 hover:bg-blue-600 hover:text-white text-lg">Banners</a>
-                            <a href="" class="block px-2 py-3 hover:bg-blue-600 hover:text-white text-lg">User</a>
-                            <form action="{{route('logout')}}" method="POST">
+                          <div class="mt-5 text-center">
+                            <a href="{{route('dashboard')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">Dashboard</a>
+                            <a href="{{route('notice.index')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">Notice</a>
+                            <a href="{{route('category.index')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">Category</a>
+                            <a href="{{route('items.index')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">Items</a>
+                            <a href="{{route('packages.index')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">Package</a>
+                            <a href="{{route('orders.index')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">Orders</a>
+                            <a href="{{route('banners.index')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">Banners</a>
+                            <a href="{{route('users.index')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">User</a>
+                            <form action="{{route('logout')}}" method="POST" >
                               @csrf
-                             <button type="submit" class="block w-full text-left px-2 py-3 hover:bg-blue-600 hover:text-white text-lg">Logout </button>
+                             <button type="submit" class="block w-full text-left px-2 py-3 hover:bg-pink-600 hover:text-white text-lg text-center">Logout </button>
 
                             </form>
 
                           </div>
 
                     </div>
-                    <div class="flex-1 p-4">
+                    <div class="flex-1 p-4 ">
                       <h2 class="font-bold text-4xl">@yield('title')</h2>
-                      <hr class="h-1 bg-blue-600">
+                      <hr class="h-1 bg-pink-400">
                       @yield('content')
 
                     </div>
