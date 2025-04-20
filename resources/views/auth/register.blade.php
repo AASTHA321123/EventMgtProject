@@ -13,6 +13,12 @@
         @error('email')
         <span class="text-red-500 text-sm block mt-1">{{$message}}</span>
         @enderror
+
+        <input type="text" name="number" placeholder="Phone no" class="w-full p-2 border border-gray-300 rounded-lg mt-3 " value="{{old('number')}}">
+        @error('number')
+        <span class="text-red-500 text-sm block mt-1">{{$message}}</span>
+        @enderror
+
         <input type="password" name="password" placeholder="Password" class="w-full p-2 border border-gray-300 rounded-lg mt-3">
         @error('password')
         <span class="text-red-500 text-sm block mt-1">{{$message}}</span>

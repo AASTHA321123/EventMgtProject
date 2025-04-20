@@ -18,7 +18,7 @@ Create Banners
     <span class="text-red-600 text-sm block-mt-5">{{$message}}</span>
     @enderror
 <div class="flex justify-center gap-3">
-    <button class="bg-blue-600 text-white px-3 py-2 rounded-lg">Add Banners</button>
+    <button class="bg-pink-600 text-white px-3 py-2 rounded-lg">Add Banners</button>
     <a href="{{route('banners.index')}}"  class="bg-red-600 text-white px-10 py-2 rounded-lg">Exit</a>
 </div>
 </form>

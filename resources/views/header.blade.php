@@ -60,7 +60,7 @@
     @yield('content')
     
 
-    <footer class="bg-pink-400 mt-20 py-2 px-20">
+    <footer class="bg-pink-600 mt-20 py-2 px-20">
         <p class="text-center text-white">Copyright &copy; 2024 | All Rights Reserved | Event Booking System
 
         </p>

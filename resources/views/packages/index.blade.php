@@ -4,7 +4,7 @@ Package
 @endsection
 @section('content')
 <div class="my-10 text-right">
-    <a href="{{route('packages.create')}}" class="px-4 py-2 bg-blue-600 rounded text-white">Add Package</a>
+    <a href="{{route('packages.create')}}" class="px-4 py-2 bg-pink-600 rounded text-white">Add Package</a>
 
 </div>
 <table class="w-full text-center">

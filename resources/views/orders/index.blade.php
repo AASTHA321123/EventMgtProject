@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="my-10 text-center">
-        <a href="" class="px-7 py-2 bg-blue-600 rounded text-white">List Of Orders</a>
+        <a href="" class="px-7 py-2 bg-pink-600 rounded text-white">List Of Orders</a>
     </div>
     <table class="w-full text-center">
         <tr>

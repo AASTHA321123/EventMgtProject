@@ -4,7 +4,7 @@ Banners
 @endsection
 @section('content')
 <div class="my-10 text-right">
-    <a href="{{route('banners.create')}}" class="px-4 py-2 bg-blue-600 rounded text-white">Add Banners</a>
+    <a href="{{route('banners.create')}}" class="px-4 py-2 bg-pink-600 rounded text-white">Add Banners</a>
 </div>
 <table class="w-full text-center">
     <tr>

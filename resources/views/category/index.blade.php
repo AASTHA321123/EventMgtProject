@@ -2,7 +2,7 @@
 @section('title')Categories @endsection
 @section('content')
 <div class="my-10 text-right">
-    <a href="{{route('category.create')}}" class="px-4 py-2 bg-blue-600 rounded text-white">Add category</a>
+    <a href="{{route('category.create')}}" class="px-4 py-2 bg-pink-600 rounded text-white">Add category</a>
 </div>
 
 <table class="w-full text-center">

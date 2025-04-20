@@ -56,7 +56,7 @@
                         <p class="text-red-500 ml-2 text-xs">{{$message}}</p>
                         @enderror
                     </div>
-                    <button class="bg-blue-600 w-52 text-white px-4 py-2 rounded-lg mt-5 ml-5">Book Now</button>
+                    <button class="bg-pink-600 w-52 text-white px-4 py-2 rounded-lg mt-5 ml-5">Book Now</button>
                     <a href="{{route('viewpackage',$package->id)}}" class="bg-red-600 w-52 text-center text-white px-4 py-2 rounded-lg mt-5 ml-5">Exit</a>
                 </div>
             </form>

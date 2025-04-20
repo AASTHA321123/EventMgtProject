@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all();
-        return view('users.index', compact('users'));
+        $users = User::all(); // Fetch all users
+        return view('users.index', compact('users')); // Pass users to the view
     }
 }

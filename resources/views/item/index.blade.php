@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="my-10 text-right">
-        <a href="{{route('items.create')}}" class="px-4 py-2 bg-blue-600 rounded text-white">Add Item</a>
+        <a href="{{route('items.create')}}" class="px-4 py-2 bg-pink-600 rounded text-white">Add Item</a>
     </div>
     <table class="w-full text-center">
         <tr>

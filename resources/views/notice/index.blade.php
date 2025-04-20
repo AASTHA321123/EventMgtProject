@@ -4,7 +4,7 @@ Notices
 @endsection
 @section('content')
 <div class="my-10 text-right">
-    <a href="{{route('notice.create')}}" class="px-4 py-2 bg-blue-600 rounded text-white">Add Notice </a>
+    <a href="{{route('notice.create')}}" class="px-4 py-2 bg-pink-600 rounded text-white">Add Notice </a>
 </div>
 
 <table class="w-full text-center">
