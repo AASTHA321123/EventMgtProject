@@ -7,7 +7,18 @@
             <p class="text-gray-700">Capacity: {{$package->capacity}} person</p>
             <p class="text-justify mt-5">{{$package->description}}</p>
         </div>
-        <div class="col-span-3">
+
+        <div class="">
+            <h2 class="font-bold text-2xl text-center my-2">Choice a Category</h2>
+            <input type="checkbox" name="selectall" id="selectall" class="text-pink-500 accent-pink-500 border-pink-500"> @foreach($items as $item )
+            <p><i class="ri-check-double-line"></i>{{$item->name}}</p>
+            @endforeach
+            @error('categories')
+            <p class="text-red-500 ml-2 text-xs"></p>
+            @enderror          
+        </div>
+
+        <div class="col-span-3 border-l pl-2">
             <form action="{{route('addtocart')}}" method="POST" class="grid grid-cols-3">
                 @csrf
                 <input type="hidden" name="package_id" value="{{$package->id}}">

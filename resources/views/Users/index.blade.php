@@ -9,7 +9,7 @@ Users
     <tr>
     <th class="border py-2">Order Date</th>
     <th class="border py-2">Username</th>
-        <th class="border py-2">Address</th>
+        <th class="border py-2">Email</th>
         <th class="border py-2">Phone No.</th>
         
     </tr>

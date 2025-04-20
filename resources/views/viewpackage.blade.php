@@ -11,7 +11,7 @@
                 <a href="{{route('bookpackage',$package->id)}}" class="bg-pink-600 text-white px-4 py-2 rounded-lg">Book Package</a>
             </div>
     </div>
-    <div class="border-l pl-2">
+    <!-- <div class="border-l pl-2">
                     <h2 class="font-bold text-2xl text-center my-2">Choice a Category</h2>
                     <input type="checkbox" name="selectall" id="selectall" class="text-pink-500 accent-pink-500 border-pink-500"> @foreach($items as $item )
         <p><i class="ri-check-double-line"></i>{{$item->name}}</p>
@@ -22,7 +22,7 @@
 
                    
                     
-    </div>
+    </div> -->
 
     <div class="border-l pl-2">
         <h3 class="font-bold text-xl">Available Items</h3>
