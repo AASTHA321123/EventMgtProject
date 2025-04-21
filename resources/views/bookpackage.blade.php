@@ -7,16 +7,31 @@
             <p class="text-gray-700">Capacity: {{$package->capacity}} person</p>
             <p class="text-justify mt-5">{{$package->description}}</p>
         </div>
+      
 
+        <!-- <div class="col-span-3 border-l pl-2">
+            <form action="{{route('addtocart')}}" method="POST" class="grid grid-cols-3">
+                @csrf 
         <div class="">
             <h2 class="font-bold text-2xl text-center my-2">Choice a Category</h2>
-            <input type="checkbox" name="selectall" id="selectall" class="text-pink-500 accent-pink-500 border-pink-500"> @foreach($items as $item )
-            <p><i class="ri-check-double-line"></i>{{$item->name}}</p>
+            <input type="checkbox" name="selectall" id="selectall" class="text-pink-500 accent-pink-500 border-pink-500"> @foreach($categories as $category )
+            <p><i class="ri-check-double-line"></i>{{$category->name}}</p>
             @endforeach
             @error('categories')
             <p class="text-red-500 ml-2 text-xs"></p>
             @enderror          
         </div>
+        @csrf
+                    @foreach($items as $item)
+                    <div class="flex justify-between p-2 border m-2 rounded hover:bg-gray-100">
+                        <div>
+                            <input type="checkbox" name="items[]" value="{{$categories->id}}" class="mr-2" id="item{{$loop->iteration}}">
+                            <label for="item{{$loop->iteration}}">{{$category->name}}</label>
+                        </div>
+                        
+                    </div>
+                    @endforeach -->
+
 
         <div class="col-span-3 border-l pl-2">
             <form action="{{route('addtocart')}}" method="POST" class="grid grid-cols-3">
