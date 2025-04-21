@@ -23,6 +23,10 @@ class pageController extends Controller
     {
         return view('contact');
     }
+    public function services()
+    {
+        return view('services');
+    }
 
     
 

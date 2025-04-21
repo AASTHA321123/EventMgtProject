@@ -32,6 +32,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[pageController::class,'home'])->name('home');
 Route::get('/about',[pageController::class,'about'])->name('about');;
 Route::get('/contact',[pageController::class,'contact'])->name('contact');;
+Route::get('/services',[pageController::class, 'services'])->name('services');;
 
 Route::get('/viewpackage/{id}',[pageController::class,'viewpackage'])->name('viewpackage');
 

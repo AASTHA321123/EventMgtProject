@@ -7,7 +7,7 @@
         <table class="w-full">
             <tr>
                 <th class="border px-4 py-2">Package Name</th>
-                <th class="border px-4 py-2">Category</th>
+                <!-- <th class="border px-4 py-2">Category</th> -->
                 <th class="border px-4 py-2">Booking Date for</th>
                 <th class="border px-4 py-2">No of People</th>
                 <th class="border px-4 py-2">Items</th>
@@ -20,7 +20,7 @@
             @foreach ($carts as $cart)
                 <tr>
                     <td class="border px-4 py-2">{{ $cart->package->name}}</td>
-                    <td class="border px-4 py-2">category</td>
+                    <!-- <td class="border px-4 py-2">category</td> -->
                     <td class="border px-4 py-2">{{ $cart->booking_date }}</td>
                     <td class="border px-4 py-2">{{ $cart->no_of_people }}</td>
                     <td class="border px-4 py-2">
