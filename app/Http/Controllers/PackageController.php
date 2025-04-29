@@ -58,4 +58,6 @@ class PackageController extends Controller
       $package->delete();
       return redirect(route('packages.index'))->with('success','Package Delete Successfully');
     }
+
+    
 }

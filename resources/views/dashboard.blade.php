@@ -46,7 +46,7 @@
       labels: ['Category', 'Notice', 'Package'],
       datasets: [{
         label: 'Count',
-        data: [{{$totalcategories}},{{$totalnotices}},{{$totalpackages}}],
+        data: [{{$totalcategories}}, {{$totalnotices}}, {{$totalpackages}}],
         borderWidth: 1
       }]
     },

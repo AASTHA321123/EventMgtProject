@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\Category;
 use App\Models\Item;
 use App\Models\Package;
 use Illuminate\Http\Request;
@@ -41,7 +42,8 @@ class pageController extends Controller
     {
         $package = Package::find($id);
         $items = Item::where('status', 'Show')->get();
-        return view ('bookpackage', compact('package','items'));
+        $categories = Category::all();
+        return view ('bookpackage', compact('package','items','categories'));
     }
     public function search (Request $request)
     {
@@ -57,7 +59,8 @@ class pageController extends Controller
         return redirect()->back()->with('error', 'No packages found.');
     }
 
-    return view('search_results', compact('packages'));
+    return view('search_result', compact('packages', 'query'));
+
     }
 }
 

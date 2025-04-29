@@ -212,6 +212,14 @@
     </div>
 </div>
 
+<!-- Rating -->
+ <div class="text-center text-red font-bold">
+    <p  class="text-2xl">Feedback and Review our Packages</p>
+    <div>
+        
+    </div>
+ </div>
+
 <script>
     var swiper = new Swiper(".mySwiper", {
       spaceBetween: 30,

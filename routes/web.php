@@ -10,6 +10,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\pageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
 use App\Models\Category;
 use App\Models\Item;
@@ -33,6 +34,7 @@ Route::get('/',[pageController::class,'home'])->name('home');
 Route::get('/about',[pageController::class,'about'])->name('about');;
 Route::get('/contact',[pageController::class,'contact'])->name('contact');;
 Route::get('/services',[pageController::class, 'services'])->name('services');;
+
 
 Route::get('/viewpackage/{id}',[pageController::class,'viewpackage'])->name('viewpackage');
 
@@ -110,6 +112,9 @@ Route::get('/orders/{id}/{status}',[OrderController::class,'status'])->name('ord
 
     //Users
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+ //Review
+ Route::post('/packages/{package}/review', [ReviewController::class, 'store'])->name('reviews.store');
 
 
 });

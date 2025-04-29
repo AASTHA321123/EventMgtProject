@@ -11,6 +11,7 @@ class NoticeController extends Controller
     {
       $notices = Notice::orderBy('notice_date','desc')->get();
       return view('notice.index',compact('notices'));
+      
     }
     public function create()
     {

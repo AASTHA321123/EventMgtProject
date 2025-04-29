@@ -11,6 +11,7 @@
         <th class="border py-2">S.N</th>
             <th class="border py-2">User Id</th>
             <th class="border py-2">package Id</th>
+            <!-- <th class="border py-2">category Id</th> -->
             <th class="border py-2">No of people</th>
             <th class="border py-2">Items</th>
             <th class="border py-2">Booking Date</th>
@@ -24,6 +25,7 @@
         <tr>
         <td class="border py-2">{{$loop->iteration}}</td>
             <td class="border py-2">{{$order->user->name}}</td>
+            <!-- <td class="border py-2">{{$order->category->name}}</td> -->
             <td class="border py-2">{{$order->package->name}}</td>
             <td class="border py-2">{{$order->no_of_people}}</td>
             <td class="border py-2">{{$order->items}}</td>
