@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Notice;
 use App\Models\Package;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -14,7 +15,9 @@ class DashboardController extends Controller
         $totalcategories = Category::count();
         $totalnotices = Notice::count();
         $totalpackages = Package::count();
-       return view('dashboard', compact('totalcategories', 'totalnotices', 'totalpackages',));
+        $totalusers = User::count();
+        return view('dashboard', compact('totalcategories', 'totalnotices', 'totalpackages', 'totalusers'));
+
         
        //categories
        $allcat = Category::all();

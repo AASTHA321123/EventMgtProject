@@ -32,7 +32,7 @@
         </form>
             
     <div class ="flex gap-5">
-        <a href="{{route('home')}}">Home</a>
+        <a href="{{route('home')}}"><i class="ri-home-4-line"></i>Home</a>
         <a href="{{ route('services') }}">Services</a>
         <a href="{{route('about')}}">About</a>
         <a href="{{route('contact')}}">Contact</a>
@@ -61,11 +61,36 @@
     @yield('content')
     
 
-    <footer class="bg-pink-600 mt-20 py-2 px-20">
-        <p class="text-center text-white">Copyright &copy; 2025 | All Rights Reserved | Event Booking System
-
-        </p>
-
+    <footer class="bg-pink-600 text-white px-16 py-4 mt-10">
+        <div class="grid grid-cols-3 gap-4">
+            <div>
+                
+      <a href="{{route('about')}}" class="  text-2xl font-bold  text-black underline text-white-400"> About Page</a>
+    </h1>
+    <p>this is our aobut page we have many package foe event if u want u can learn more about us....</p>
+            </div>
+            <div class="   text-center">
+            
+      <a href="{{route('services')}}" class=" underline text-2xl text-white-400 font-bold  text-black">  Our Sevices</a>
+    </h1>
+                <ul>
+                    <li>service 1</li>
+                    <li>service 2</li>
+                    <li>service 3</li>
+                    <li>service 4</li>
+                    <li>service 5</li>
+                    <li>service 6</li>
+                </ul>
+            </div>
+            <div>
+            <h1 class=" text-2xl font-bold text-black">
+            <a href="{{route('contact')}} " class=" underline text-white-400">Contact Us</a>
+            </h1>
+                <p>Address: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                <p>Phone: 9876543210</p>
+                <p>Email: info@info.com</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

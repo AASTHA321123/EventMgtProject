@@ -40,7 +40,7 @@ Route::get('/viewpackage/{id}',[pageController::class,'viewpackage'])->name('vie
 
 Route::get('/search',[pageController::class,'search'])->name('search');
 
-
+//Auth
 Route::middleware(['auth'])->group(function(){
 Route::get('/bookpackage/{id}',[pageController::class,'bookpackage'])->name('bookpackage');
 Route::get('/cart',[CartController::class,'index'])->name('cart.index');
