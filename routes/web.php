@@ -39,6 +39,7 @@ Route::get('/services',[pageController::class, 'services'])->name('services');;
 Route::get('/viewpackage/{id}',[pageController::class,'viewpackage'])->name('viewpackage');
 
 Route::get('/search',[pageController::class,'search'])->name('search');
+Route::post('/review/stores',[pageController::class,'reviewstore'])->name('review.store');
 
 //Auth
 Route::middleware(['auth'])->group(function(){

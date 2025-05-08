@@ -57,7 +57,7 @@
         {{-- Left: Rating Form --}}
         <div class="bg-white p-6 shadow rounded-2xl">
             <h2 class="text-xl font-bold mb-4">Submit a Review</h2>
-            <form action="" method="POST">
+            <form action="{{route('review.store')}}" method="POST">
                 @csrf
 
                 <div class="mb-4">
@@ -69,7 +69,7 @@
                     <label class="block mb-1 font-semibold">Select Package</label>
                     <select name="package_id" class="w-full border rounded px-3 py-2" required>
                         @foreach($packages as $package)
-                            <option value=""></option>
+                            <option value="{{$package->id}}">{{$package->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -100,20 +100,23 @@
         <div class="bg-white p-6 shadow rounded-2xl">
             <h2 class="text-xl font-bold mb-4">User Reviews</h2>
            
+                @foreach($reviews as $review)
                 <div class="border-b py-4">
                     <div class="flex justify-between items-center">
-                        <h3 class="font-bold"></h3>
+                        <h3 class="font-bold">{{$review->user->name}}</h3>
                         <div class="text-yellow-500">
-                            
+                            @for($i=0;$i<$review->rating;$i++)
+                            ★
+                            @endfor
                         </div>
                     </div>
-                    <p class="text-gray-700 mt-1"></p>
+                    <p class="text-gray-700 mt-1">{{$review->title}}</p>
                     <div class="text-sm text-gray-500 mt-2">
-                       
+                       {{$review->description}}
                     </div>
                 </div>
            
-                <p>No reviews yet.</p>
+                @endforeach
            
         </div>
 
