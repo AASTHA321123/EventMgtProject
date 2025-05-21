@@ -48,13 +48,13 @@
     
 
 <!-- Rating  -->
- <div class="text-center">
-    <p>feedback</p>
+ <div class="text-center Font-bold">
+    <p class="text-2xl text-black text-bold">feedback</p>
  </div>
 <div class="p-6">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        {{-- Left: Rating Form --}}
+        <!-- {{-- Left: Rating Form --}} -->
         <div class="bg-white p-6 shadow rounded-2xl">
             <h2 class="text-xl font-bold mb-4">Submit a Review</h2>
             <form action="{{route('review.store')}}" method="POST">
@@ -96,7 +96,7 @@
             </form>
         </div>
 
-        {{-- Right: Display Reviews --}}
+        <!-- {{-- Right: Display Reviews --}} -->
         <div class="bg-white p-6 shadow rounded-2xl">
             <h2 class="text-xl font-bold mb-4">User Reviews</h2>
            

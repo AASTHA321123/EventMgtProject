@@ -21,7 +21,7 @@
     @include('layouts.alert')
     <nav class="flex px-20 py-2 bg-white justify-between items-center shadow-lg sticky top-0 z-30 ">
     
-    <img src="{{asset('logo/images of logo.jpg')}}" alt="" class="h-16">
+    <img src="{{asset('logo/logo2.jpg')}}" alt="" class="h-16">
 
     <!-- serching -->
     
@@ -75,19 +75,19 @@
       <a href="{{route('services')}}" class=" underline text-2xl text-white-400 font-bold  text-black">  Our Sevices</a>
     </h1>
                 <ul>
-                    <li>service 1</li>
-                    <li>service 2</li>
-                    <li>service 3</li>
-                    <li>service 4</li>
-                    <li>service 5</li>
-                    <li>service 6</li>
+                    <li>Service 1</li>
+                    <li>Service 2</li>
+                    <li>Service 3</li>
+                    <li>Service 4</li>
+                    <li>Service 5</li>
+                    <li>Service 6</li>
                 </ul>
             </div>
             <div>
             <h1 class=" text-2xl font-bold text-black">
             <a href="{{route('contact')}} " class=" underline text-white-400">Contact Us</a>
             </h1>
-                <p>Address: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                <p>Address: Chitwan, Bharatpur-10  Narayanghar</p>
                 <p>Phone: 9876543210</p>
                 <p>Email: info@info.com</p>
             </div>
