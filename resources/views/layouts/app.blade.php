@@ -20,12 +20,13 @@
                    <div class="flex">
                     <div class="w-56 bg-gray-200 shadow-lg h-screen">
                         <div>
-                        <img src="{{asset('logo/images of logo.jpg')}}" alt="" class="h-16  mx-auto my-5">
+                        <img src="{{asset('logo/logo2.jpg')}}" alt="" class="h-20 w-40  mx-auto my-5">
                        
                           </div>
                           <div class="mt-5 text-center">
                             <a href="{{route('dashboard')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">Dashboard</a>
                             <a href="{{route('notice.index')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">Notice</a>
+                            <a href="{{route('review.index')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">Review</a>
                             <a href="{{route('category.index')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">Category</a>
                             <a href="{{route('items.index')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">Items</a>
                             <a href="{{route('packages.index')}}" class="block px-2 py-3 hover:bg-pink-600 hover:text-white text-lg">Package</a>

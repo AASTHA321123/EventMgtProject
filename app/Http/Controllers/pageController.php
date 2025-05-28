@@ -48,6 +48,8 @@ class pageController extends Controller
         $categories = Category::all();
         return view ('bookpackage', compact('package','items','categories'));
     }
+
+    //binary searching algorithm
     public function search(Request $request)
     {
         $query = $request->input('query');
@@ -71,7 +73,7 @@ class pageController extends Controller
             'rating' => 'required',
         ]);
         $data['user_id'] = Auth::id();
-        Review::create($data);
+        // Review::create($data);
         return back()->with('success','Review Submitted Successfully');
     }
 }

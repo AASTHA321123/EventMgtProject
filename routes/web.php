@@ -39,10 +39,11 @@ Route::get('/services',[pageController::class, 'services'])->name('services');;
 Route::get('/viewpackage/{id}',[pageController::class,'viewpackage'])->name('viewpackage');
 
 Route::get('/search',[pageController::class,'search'])->name('search');
-Route::post('/review/stores',[pageController::class,'reviewstore'])->name('review.store');
+
 
 //Auth
 Route::middleware(['auth'])->group(function(){
+    Route::post('/review/stores',[pageController::class,'reviewstore'])->name('review.store');
 Route::get('/bookpackage/{id}',[pageController::class,'bookpackage'])->name('bookpackage');
 Route::get('/cart',[CartController::class,'index'])->name('cart.index');
 
@@ -72,6 +73,9 @@ Route::post('/notice/create/store',[NoticeController::class,'store'])->name('not
 Route::get('/notice/{id}/edit',[NoticeController::class,'edit'])->name('notice.edit');
 Route::post('/notice/{id}/update',[NoticeController::class,'update'])->name('notice.update');
 Route::get('/notice/{id}/destroy',[NoticeController::class,'destroy'])->name('notice.destroy');
+
+//Review
+Route::get('/review',[ReviewController::class,'index'])->name('review.index');
 
 
 //Item

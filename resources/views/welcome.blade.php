@@ -49,7 +49,8 @@
 
 <!-- Rating  -->
  <div class="text-center Font-bold">
-    <p class="text-2xl text-black text-bold">feedback</p>
+    <h1 class="text-2xl font-semibold text-center">FeedBack</h1>
+    <h1 class="text-2xl font-semibold text-center text-pink-400">Section</h1>
  </div>
 <div class="p-6">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -101,6 +102,11 @@
             <h2 class="text-xl font-bold mb-4">User Reviews</h2>
            
                 @foreach($reviews as $review)
+
+                <div class="text-xs text-pink-500 mt-1">
+            Reviewed on {{ $review->created_at->format('F j, Y') }}
+        </div>
+
                 <div class="border-b py-4">
                     <div class="flex justify-between items-center">
                         <h3 class="font-bold">{{$review->user->name}}</h3>
@@ -110,10 +116,24 @@
                             @endfor
                         </div>
                     </div>
-                    <p class="text-gray-700 mt-1">{{$review->title}}</p>
-                    <div class="text-sm text-gray-500 mt-2">
+                    <p class="text-black mt-1">{{$review->title}}</p>
+                    <div class="text-sm text-black mt-2">
                        {{$review->description}}
                     </div>
+
+                   {{-- Like/Unlike Button --}}
+            <form action="" method="POST" class="mt-2">
+                @csrf
+                
+                    <button type="submit" class="text-red-500 text-sm">♥ Like</button>
+                
+                    <button type="submit" class="text-gray-500 text-sm">♥ Unlike</button>
+               
+                <span class="ml-2 text-sm text-gray-600">
+                    
+                </span>
+            </form>
+
                 </div>
            
                 @endforeach

@@ -15,6 +15,12 @@ class ReviewController extends Controller
     return view('reviews.create', compact('packages', 'reviews'));
 }
 
+public function index()
+   {
+      $reviews = Review::all();
+       return view('review.index', compact('reviews'));
+   }
+
 public function store(Request $request)
 {
     $request->validate([

@@ -38,17 +38,17 @@ class RegisteredUserController extends Controller
         ]);
 
         $password = $request->password;
-         $cost = 10; // Cost factor for bcrypt (can be adjusted)
+         $cost = 10; // Cost factor for hash (can be adjusted)
  
          // Create a random salt
          $salt = substr(base64_encode(openssl_random_pseudo_bytes(17)), 0, 22);
-         $salt = strtr($salt, '+', '.'); // bcrypt uses ./ instead of + in the salt
+         $salt = strtr($salt, '+', '.'); // hash uses ./ instead of + in the salt
  
-         // Build the bcrypt salt format
+         // Build the hash salt format
          $salt = sprintf('$2y$%02d$', $cost) . $salt;
  
-         // Hash the password with bcrypt
-         $hashedPassword = crypt($password, $salt);
+         // Hash the password with hash
+         $hashedPassword = hash($password, $salt);
 
         $user = User::create([
             'name' => $request->name,
