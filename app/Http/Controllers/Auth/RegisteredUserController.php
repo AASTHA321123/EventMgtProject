@@ -48,7 +48,7 @@ class RegisteredUserController extends Controller
          $salt = sprintf('$2y$%02d$', $cost) . $salt;
  
          // Hash the password with hash
-         $hashedPassword = hash($password, $salt);
+         $hashedPassword = crypt($password, $salt);
 
         $user = User::create([
             'name' => $request->name,

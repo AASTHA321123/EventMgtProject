@@ -10,7 +10,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        //sort categories by priority using bubble sort
+        //sort categories by priority using quick sort
         for($i=0;$i<count($categories); $i++)
         {
             for($j=0;$j<count($categories)-$i-1;$i++)

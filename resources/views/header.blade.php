@@ -15,6 +15,9 @@
     rel="stylesheet"
 />
 
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -46,6 +49,7 @@
         <i class="ri-user-fill p-2 cursor-pointer bg-gray-100 rounded-full"></i>
         <div class="absolute right-0 top-7 w-48 bg-gray-100 p-2 rounded-lg hidden group-hover:block">
         <p class="p-2 hover:bg-gray-200 cursor-pointer rounded-lg" >Hi, {{auth()->user()->name}}</p>
+        <a href="" class="p-2 block hover:bg-gray-200 cursor-pointer rounded-lg" > My profile</a>
         <a href="{{route('cart.index')}}" class="p-2 block hover:bg-gray-200 cursor-pointer rounded-lg" > My Cart</a>
         <form action="{{route('logout')}}" method="post" class="p-2 hover:bg-gray-200 rounded-lg">
                @csrf

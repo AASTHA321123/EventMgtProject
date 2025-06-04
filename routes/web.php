@@ -45,6 +45,8 @@ Route::get('/search',[pageController::class,'search'])->name('search');
 Route::middleware(['auth'])->group(function(){
     Route::post('/review/stores',[pageController::class,'reviewstore'])->name('review.store');
 Route::get('/bookpackage/{id}',[pageController::class,'bookpackage'])->name('bookpackage');
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+
 Route::get('/cart',[CartController::class,'index'])->name('cart.index');
 
 Route::post('/addtocart',[CartController::class,'store'])->name('addtocart');
@@ -76,6 +78,7 @@ Route::get('/notice/{id}/destroy',[NoticeController::class,'destroy'])->name('no
 
 //Review
 Route::get('/review',[ReviewController::class,'index'])->name('review.index');
+Route::get('/review/{id}/destroy',[ReviewController::class,'destroy'])->name('review.destroy');
 
 
 //Item

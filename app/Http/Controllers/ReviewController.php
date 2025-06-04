@@ -36,8 +36,34 @@ public function store(Request $request)
         'title' => $request->title,
         'description' => $request->description,
         'rating' => $request->rating,
+        'sentiment_score' => $numericScore,
     ]);
+
+    // Sentiment Analysis algorthim
+    $sentiment = new Sentiment();
+    $score = $sentiment->score($request->description);
+    $class = $sentiment->categorise($request->description); // positive, negative, neutral
+
+    // Optional: Convert to numeric sentiment score (e.g., +1 for positive, -1 for negative)
+    $numericScore = match ($class) {
+        'positive' => 1,
+        'neutral' => 0,
+        'negative' => -1,
+    };
 
     return redirect()->route('reviews.create')->with('success', 'Review submitted!');
 }
+
+public function averageSentiment()
+{
+    return $this->reviews()->avg('sentiment_score');
+}
+
+
+public function destroy ($id)
+    {
+      $reviews = Review::find($id);
+      $reviews->delete();
+      return redirect(route('review.index'))->with('success','Review Delete Successfully');
+    }
 }

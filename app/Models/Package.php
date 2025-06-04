@@ -19,6 +19,20 @@ public function averageRating()
 {
     return $this->reviews()->avg('rating') ?? 0;
 }
+ 
+
+
+
+
+public function getAverageRatingAttribute()
+{
+    return $this->reviews()->avg('rating') ?? 0;
+}
+
+public function getReviewCountAttribute()
+{
+    return $this->reviews()->count();
+}
 
 }
 

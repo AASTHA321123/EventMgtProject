@@ -3,18 +3,7 @@
 @section('content')
 <div class="max-w-7xl mx-auto p-6">
         <!-- Search Form -->
-        <form action="{{ route('search') }}" method="GET" class="flex justify-center mb-8">
-            <input 
-                type="search" 
-                name="query"
-                value="{{ request('query') }}"
-                placeholder="Search..." 
-                class="border border-pink-200 p-2 w-1/2 rounded-l-lg"
-            >
-            <button type="submit" class="bg-pink-400 text-white rounded-r-lg px-4">
-                <i class="ri-search-line p-2"></i> Search
-            </button>
-        </form>
+        
 
         <!-- Display error message if redirected back with error -->
         @if(session('error'))

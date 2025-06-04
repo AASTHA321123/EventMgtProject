@@ -38,7 +38,39 @@
             <div class="text-center justify-between item-center p-4">
               <a href="{{route('viewpackage',$package->id)}}" class=" bg-blue-50  text-blue-600 px-4 py-2 rounded-lg">Get Packages</a>
            </div>
+           
+          <!-- Rating Display -->
+<div class="flex items-center justify-center mt-2">
+    @php
+        $fullStars = floor($package->average_rating);
+        $halfStar = ($package->average_rating - $fullStars) >= 0.5;
+        $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0);
+    @endphp
+
+    {{-- Full Stars --}}
+    @for ($i = 0; $i < $fullStars; $i++)
+        <svg class="w-5 h-5 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+    @endfor
+
+    {{-- Half Star --}}
+    @if ($halfStar)
+        <svg class="w-5 h-5 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0v15z"/>
+        </svg>
+    @endif
+
+    {{-- Empty Stars --}}
+    @for ($i = 0; $i < $emptyStars; $i++)
+        <svg class="w-5 h-5 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+    @endfor
+
+    <span class="ml-2 text-sm text-white">({{ number_format($package->average_rating, 1) }}/5 from {{ $package->review_count }} {{ Str::plural('review', $package->review_count) }})</span>
+</div>
+
       </div>
+
+
+      
         @endforeach
          </div>
     </div>
@@ -50,7 +82,7 @@
 <!-- Rating  -->
  <div class="text-center Font-bold">
     <h1 class="text-2xl font-semibold text-center">FeedBack</h1>
-    <h1 class="text-2xl font-semibold text-center text-pink-400">Section</h1>
+    <h1 class="text-2xl font-semibold text-center text-pink-500">Section</h1>
  </div>
 <div class="p-6">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -78,6 +110,7 @@
                 <div class="mb-4">
                     <label class="block mb-1 font-semibold">Comment</label>
                     <textarea name="description" class="w-full border rounded px-3 py-2" rows="4" required></textarea>
+                    
                 </div>
 
                 <div class="mb-4">
@@ -102,7 +135,19 @@
             <h2 class="text-xl font-bold mb-4">User Reviews</h2>
            
                 @foreach($reviews as $review)
+ 
+                <!-- Sentiment comment  -->
+@if($review->sentiment == 'positive' && $review->sentiment_score['pos'] >= 0.6)
+    <p class="text-green-600 text-sm mt-1 font-semibold">
+        👍 Good comment — Positive sentiment ({{ number_format($review->sentiment_score['pos'] * 100, 1) }}%)
+    </p>
+@endif
 
+@if($review->sentiment == 'positive' && $review->sentiment_score['pos'] >= 0.6)
+    <p class="text-green-600 text-sm mt-1 font-semibold">
+        👎 Bad comment — Positive sentiment ({{ number_format($review->sentiment_score['neg'] * 100, 1) }}%)
+    </p>
+@endif
                 <div class="text-xs text-pink-500 mt-1">
             Reviewed on {{ $review->created_at->format('F j, Y') }}
         </div>
@@ -121,23 +166,17 @@
                        {{$review->description}}
                     </div>
 
-                   {{-- Like/Unlike Button --}}
-            <form action="" method="POST" class="mt-2">
-                @csrf
-                
-                    <button type="submit" class="text-red-500 text-sm">♥ Like</button>
-                
-                    <button type="submit" class="text-gray-500 text-sm">♥ Unlike</button>
-               
-                <span class="ml-2 text-sm text-gray-600">
-                    
-                </span>
-            </form>
+
+
+                   
 
                 </div>
            
                 @endforeach
-           
+
+
+
+                
         </div>
 
     </div>

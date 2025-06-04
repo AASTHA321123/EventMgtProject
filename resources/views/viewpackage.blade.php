@@ -30,5 +30,30 @@
         <p><i class="ri-check-double-line"></i>{{$item->name}}</p>
         @endforeach
     </div>
+
+    <!-- {{-- Review Section --}} -->
+    <div class="md:col-span-2 space-y-6">
+        <h2 class="text-2xl font-bold text-gray-800">User Reviews</h2>
+
+        @forelse ($package->reviews as $review)
+            <div class="bg-white shadow-sm rounded-2xl p-5 border hover:shadow-md transition">
+                <div class="flex items-center justify-between mb-2">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">{{ $review->title }}</h3>
+                        <p class="text-sm text-gray-500">by {{ $review->user->name }} • {{ $review->created_at->diffForHumans() }}</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-blue-500"> Rating: {{ $review->sentiment_score }}</p>
+                        <p class="text-yellow-500 font-semibold">⭐ {{ $review->rating }} / 5</p>
+                        
+                    </div>
+                </div>
+                <p class="text-gray-600 mt-2">{{ $review->description }}</p>
+            </div>
+        @empty
+            <p class="text-gray-500 italic">No reviews yet for this package.</p>
+        @endforelse
+    </div>
+
 </div>
 @endsection
